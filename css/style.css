@@ -1,0 +1,92 @@
+/* La Femme, Biljana Glišić: stilovi */
+:root {
+  --body: 18px;
+  --px: 48px;
+  --py: 120px;
+  --pyTight: 80px;
+  --vodicPad: 40px 48px;
+  --gap: 72px;
+  --h1: 78px;
+  --h2: 46px;
+  --h3big: 40px;
+  --lead: 20px;
+  --logo: 30px;
+  --sign: 24px;
+  --headerPadY: 14px;
+  --aboutImg: 600px;
+  --headerPos: absolute;
+  --heroPad: 96px 48px 110px;
+  --heroMin: 700px;
+  --progSpan: 2;
+  --cardPad: 56px 52px;
+  --footTop: 104px;
+  --pillarH3: 30px;
+  --progCols: minmax(0, 1fr) minmax(0, 1.25fr);
+  --progPad: 48px 40px;
+  --oneLineH2: 46px;
+  --painsTextOrder: 0;
+  --painsTextTop: 42px;
+  --painsH2: 46px;
+  --painsWrap: nowrap;
+}
+/* tablet: isti izgled kao desktop, ali naslovi smiju preći u novi red */
+@media (max-width: 1099px) {
+  :root { --painsWrap: normal; --progSpan: 1; --progCols: minmax(0, 1fr); --painsTextTop: 0px; }
+}
+/* telefon */
+@media (max-width: 760px) {
+  :root {
+  --body: 17px;
+    --px: 20px;
+    --py: 72px;
+    --pyTight: 56px;
+    --vodicPad: 28px 20px;
+    --gap: 44px;
+    --h1: 44px;
+    --h2: 34px;
+    --h3big: 32px;
+    --lead: 18px;
+    --logo: 22px;
+    --sign: 17px;
+    --headerPadY: 8px;
+    --aboutImg: 440px;
+    --headerPos: absolute;
+    --heroPad: 8px 20px 64px;
+    --heroMin: 0px;
+    --progSpan: 1;
+    --cardPad: 34px 22px;
+    --footTop: 72px;
+    --pillarH3: 23px;
+    --progCols: minmax(0, 1fr);
+    --progPad: 34px 22px;
+    --oneLineH2: 34px;
+    --painsTextOrder: -1;
+    --painsTextTop: 0px;
+    --painsH2: 34px;
+    --painsWrap: normal;
+  }
+}
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+img { max-width: 100%; }
+a:focus-visible, button:focus-visible { outline: 3px solid #FDD406; outline-offset: 3px; }
+.desk-only, .nav-desk { display: contents; }
+.mob-only, .nav-mob { display: none; }
+@media (max-width: 1099px) { .nav-desk { display: none; } .nav-mob { display: contents; } }
+@media (max-width: 760px) { .desk-only { display: none; } .mob-only { display: contents; } }
+@media (min-width: 1100px) { #mob-nav { display: none !important; } }
+#site-header { transition: transform 0.25s ease; }
+#site-header.is-hidden { transform: translateY(-100%); }
+.mob-link { display: flex; align-items: center; min-height: 48px; color: #FFFFFF; text-decoration: none; font-size: 18px; font-weight: 600; border-bottom: 1px solid #335049; }
+.mob-cta { display: flex; align-items: center; justify-content: center; min-height: 52px; margin-top: 16px; border-radius: 999px; background: #FDD406; color: #1F3834; text-decoration: none; font-weight: 700; font-size: 17px; }
+body{margin:0}
+section[id]{scroll-margin-top:96px}
+@keyframes lfPainIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lf-wait .lf-pain{opacity:0}
+.lf-go .lf-pain{animation:lfPainIn 0.6s ease-out both}
+.lf-go .lf-pain:nth-child(2){animation-delay:0.5s}
+.lf-go .lf-pain:nth-child(3){animation-delay:1s}
+.lf-go .lf-pain:nth-child(4){animation-delay:1.5s}
+.lf-go .lf-pain:nth-child(5){animation-delay:2s}
+.lf-go .lf-pain:nth-child(6){animation-delay:2.5s}
+@media (prefers-reduced-motion: reduce){.lf-wait .lf-pain{opacity:1}.lf-go .lf-pain{animation:none}}
